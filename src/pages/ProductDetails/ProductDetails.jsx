@@ -2,7 +2,9 @@ import { useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => { 
     const singleProduct = useLoaderData();
-    console.log(singleProduct.desc)
+    const handleAddToCart = id =>{
+        console.log(id);
+    }
     return (
         <div className="py-20">
             <div className="card card-compact w-2/3 bg-base-100 shadow-xl mx-auto">
@@ -13,7 +15,7 @@ const ProductDetails = () => {
                     <p>Price: {singleProduct.price}</p>
                     <p>Rating: {singleProduct.rating}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn">Add to Cart</button>
+                        <button onClick={()=>handleAddToCart(singleProduct._id)} className="btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
