@@ -31,6 +31,15 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                const user = {email};
+                fetch('http://localhost:5000/user', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                    
+                    },
+                    body: JSON.stringify(user)
+                })
                 toast.success('Successfully Sign Up')
                 handleUpdateUserProfile(name, photo);
             })

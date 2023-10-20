@@ -7,6 +7,7 @@ import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import MyCart from "../pages/MyCart/MyCart";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
           loader: ({params})=> fetch(`http://localhost:5000/product-details/${params.id}`)
         },
         {
+          path: '/storeProduct/:email',
+          element: <MyCart></MyCart>,
+          loader: ({params})=> fetch(`http://localhost:5000/storeProduct/${params.email}`)
+        },
+        {
           path: '/login',
           element: <Login></Login>
         },
@@ -41,6 +47,7 @@ const router = createBrowserRouter([
           element: <Register></Register>
 
         }
+        
         
       ]
     },

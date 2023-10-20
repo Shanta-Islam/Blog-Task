@@ -15,7 +15,7 @@ const Header = () => {
             isPending ? "pending" : isActive ? "text-black hover:text-black focus:text-white bg-transparent underline" : ""}>Home</NavLink></li>
         <li><NavLink to="/addProduct" className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-black hover:text-black focus:text-white  bg-transparent underline" : ""}>Add product</NavLink></li>
-        <li><NavLink to="/myCart" className={({ isActive, isPending }) =>
+        <li><NavLink to={`/storeProduct/${user.email}`} className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-black hover:text-black focus:text-white bg-transparent underline" : ""}>My Cart</NavLink></li>
 
     </>
