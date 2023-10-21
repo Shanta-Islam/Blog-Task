@@ -54,8 +54,8 @@ const Header = () => {
                 </div>
                 {
                     theme=== 'light' ?
-                    <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-black"><img src="../../../assets/logo-2.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
-                    : <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-white"><img src="../../../assets/logo-1.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
+                    <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-black"><img src="https://i.ibb.co/PYdLcCM/logo-2.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
+                    : <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-white"><img src="https://i.ibb.co/Bj9q11D/logo-1.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
                 }
             </div>
             <div className="navbar-center hidden lg:flex">
