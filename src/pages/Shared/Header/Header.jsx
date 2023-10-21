@@ -15,9 +15,8 @@ const Header = () => {
             isPending ? "pending" : isActive ? "text-black hover:text-black focus:text-white bg-transparent underline" : ""}>Home</NavLink></li>
         <li><NavLink to="/addProduct" className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-black hover:text-black focus:text-white  bg-transparent underline" : ""}>Add product</NavLink></li>
-        <li><NavLink to={`/storeProduct/${user.email}`} className={({ isActive, isPending }) =>
+        <li><NavLink to={`/storeProduct/${user?.email}`} className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-black hover:text-black focus:text-white bg-transparent underline" : ""}>My Cart</NavLink></li>
-
     </>
 
 
@@ -30,26 +29,27 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         {links}
+                        
                     </ul>
                 </div>
-                <Link to='/'><a className="normal-case flex gap-2 text-3xl font-medium text-black"><img src="/src/assets/logo.png" alt="" className="w-10" />eShopHub</a></Link>
+                <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-black"><img src="/src/assets/logo-2.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end hidden lg:flex">
+            <div className="navbar-end flex">
                 {
                     user ?
-                        <ul className="menu menu-horizontal px-1">
-                            <li><div className="avatar">
+                        <ul className="menu-horizontal px-3">
+                            <li className="mx-3"><div className="avatar">
                                 <div className="w-8 rounded-full">
                                     <img src={user?.photoURL ? user?.photoURL : 'https://i.ibb.co/X2xMzwL/defultuser.png'} />
                                 </div>
                             </div></li>
-                            <li><p>{user?.displayName ? user?.displayName : "User"}</p></li>
-                            <li onClick={handleSignOut}><a>SignOut</a></li>
+                            <li className="mx-3"><p>{user?.displayName ? user?.displayName : "User"}</p></li>
+                            <li className="mx-3" onClick={handleSignOut}><a>SignOut</a></li>
                         </ul>
                         :
                         <ul className="menu menu-horizontal px-1">

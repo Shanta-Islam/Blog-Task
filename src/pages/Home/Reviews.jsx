@@ -8,7 +8,7 @@ const Reviews = () => {
             <div className="mx-auto max-w-screen-2xl px-4 py-12">
                 <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
                     <blockquote
-                        className="flex h-full flex-col justify-between bg-slate-300 p-6 shadow-sm sm:p-8"
+                        className="flex h-full flex-col justify-between border-2 p-6 shadow-sm sm:p-8"
                     >
                         <div>
                             <div className="mt-4">
@@ -30,7 +30,7 @@ const Reviews = () => {
                         </footer>
                     </blockquote>
                     <blockquote
-                        className="flex h-full flex-col justify-between bg-slate-300 p-6 shadow-sm sm:p-8"
+                        className="flex h-full flex-col justify-between border-2 p-6 shadow-sm sm:p-8"
                     >
                         <div>
                             <div className="mt-4">
@@ -52,7 +52,7 @@ const Reviews = () => {
                         </footer>
                     </blockquote>
                     <blockquote
-                        className="flex h-full flex-col justify-between bg-slate-300 p-6 shadow-sm sm:p-8"
+                        className="flex h-full flex-col justify-between border-2 p-6 shadow-sm sm:p-8"
                     >
                         <div>
                             <div className="mt-4">

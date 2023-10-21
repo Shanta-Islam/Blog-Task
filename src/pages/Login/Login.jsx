@@ -16,10 +16,10 @@ const Login = () => {
         const password = form.get("password");
         signIn(email, password)
             .then(result => {
-                if (email !== result.user.email) {
+                if (email !== result.user?.email) {
                     toast.error("email does't match")
                 }
-                else if (password !== result.user.password) {
+                else if (password !== result.user?.password) {
                     toast.error("password doesn't match");
                 }
                 toast.success('Successfully Sign In')
