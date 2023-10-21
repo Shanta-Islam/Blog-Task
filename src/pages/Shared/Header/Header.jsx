@@ -1,13 +1,16 @@
-
-import { useContext } from "react";
+import { HiMoon, HiSun } from "react-icons/hi";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleSignOut = () => {
         logOut()
-            .then()
+            .then(() => {
+                toast.success('Successfully Log Out');
+            })
             .catch()
     }
     const links = <>
@@ -20,6 +23,22 @@ const Header = () => {
     </>
 
 
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+    );
+    const handleToggle = (e) => {
+        if (e.target.checked) {
+            setTheme("dark");
+        } else {
+            setTheme("light");
+        }
+    };
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme");
+        document.querySelector("html").setAttribute("data-theme", localTheme);
+    }, [theme]);
+
     return (
         <div className="navbar bg-base-100 fixed top-0 z-50">
             <div className="navbar-start">
@@ -29,7 +48,7 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         {links}
-                        
+
                     </ul>
                 </div>
                 <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-black"><img src="/src/assets/logo-2.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
@@ -40,6 +59,15 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end flex">
+                <button className="btn btn-square btn-ghost">
+                    <label className="swap swap-rotate w-6 h-6">
+                        <input type="checkbox"
+                            onChange={handleToggle}
+                            checked={theme === "light" ? false : true} />
+                        <HiSun className="w-6 h-6 swap-on"></HiSun>
+                        <HiMoon className="w-6 h-6 swap-off"></HiMoon>
+                    </label>
+                </button>
                 {
                     user ?
                         <ul className="menu-horizontal px-3">
@@ -59,7 +87,7 @@ const Header = () => {
 
                 }
             </div>
-
+            <Toaster />
         </div>
     );
 };
