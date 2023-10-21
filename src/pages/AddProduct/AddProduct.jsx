@@ -15,7 +15,7 @@ const AddProduct = () => {
 
         const newProduct = { photo, name, price, brandName, type, desc, rating}
         console.log(newProduct);
-        fetch('http://localhost:5000/products', {
+        fetch('https://eshophub-server-shanta-islam.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

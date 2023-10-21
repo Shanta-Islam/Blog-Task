@@ -32,7 +32,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user);
                 const user = {email};
-                fetch('http://localhost:5000/user', {
+                fetch('https://eshophub-server-shanta-islam.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

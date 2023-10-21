@@ -28,22 +28,22 @@ const router = createBrowserRouter([
         {
           path: '/product/:brand_name',
           element: <Products></Products>,
-          loader: ({params})=> fetch(`http://localhost:5000/product/${params.brand_name}`)
+          loader: ({params})=> fetch(`https://eshophub-server-shanta-islam.vercel.app/product/${params.brand_name}`)
         },
         {
           path: '/product-details/:id',
           element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/product-details/${params.id}`)
+          loader: ({params})=> fetch(`https://eshophub-server-shanta-islam.vercel.app/product-details/${params.id}`)
         },
         {
           path: '/storeProduct/:email',
           element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/storeProduct/${params?.email}`)
+          loader: ({params})=> fetch(`https://eshophub-server-shanta-islam.vercel.app/storeProduct/${params?.email}`)
         },
         {
           path: '/update/:id',
           element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/product-details/${params.id}`)
+          loader: ({params})=> fetch(`https://eshophub-server-shanta-islam.vercel.app/product-details/${params.id}`)
         },
         {
           path: '/login',

@@ -4,7 +4,7 @@ import SingleBrand from "./SingleBrand";
 const Brands = () => {
     const [brands, setBrands] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/brands')
+        fetch('https://eshophub-server-shanta-islam.vercel.app/brands')
         .then(res=> res.json())
         .then(data=> setBrands(data))
     },[])

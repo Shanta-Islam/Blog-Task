@@ -8,7 +8,7 @@ const MyCart = () => {
     // console.log(items)
     const handleDelete = id =>{
         console.log(id);
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://eshophub-server-shanta-islam.vercel.app/product/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

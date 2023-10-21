@@ -15,7 +15,7 @@ const ProductDetails = () => {
             productBName: singleProduct.brandName
 
         }
-        fetch('http://localhost:5000/storeProduct', {
+        fetch('https://eshophub-server-shanta-islam.vercel.app/storeProduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

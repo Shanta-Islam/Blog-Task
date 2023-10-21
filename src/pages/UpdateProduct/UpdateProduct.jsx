@@ -18,7 +18,7 @@ const UpdateProduct = () => {
 
         const updateProduct = { photo, name, price, brandName, type,  rating}
         console.log(updateProduct);
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://eshophub-server-shanta-islam.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
