@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
+import { FaHtml5 } from "react-icons/fa6";
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -15,11 +16,11 @@ const Header = () => {
     }
     const links = <>
         <li><NavLink to="/" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-black hover:text-black focus:text-white bg-transparent underline" : ""}>Home</NavLink></li>
+            isPending ? "pending" : isActive ? "text-[#cbbdfe] font-bold hover:text-[#cbbdfe] focus:text-[#cbbdfe] bg-transparent underline " : ""}>Home</NavLink></li>
         <li><NavLink to="/addProduct" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-black hover:text-black focus:text-white  bg-transparent underline" : ""}>Add product</NavLink></li>
+            isPending ? "pending" : isActive ? "text-[#cbbdfe] font-bold hover:text-[#cbbdfe] focus:text-[#cbbdfe]  bg-transparent underline" : ""}>Add product</NavLink></li>
         <li><NavLink to={`/storeProduct/${user?.email}`} className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-black hover:text-black focus:text-white bg-transparent underline" : ""}>My Cart</NavLink></li>
+            isPending ? "pending" : isActive ? "text-[#cbbdfe] font-bold hover:text-[#cbbdfe] focus:text-[#cbbdfe] bg-transparent underline" : ""}>My Cart</NavLink></li>
     </>
 
 
@@ -51,7 +52,11 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-black"><img src="/src/assets/logo-2.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
+                {
+                    theme=== 'light' ?
+                    <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-black"><img src="/src/assets/logo-2.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
+                    : <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-white"><img src="/src/assets/logo-1.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
+                }
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

@@ -16,7 +16,7 @@ const Reviews = () => {
                                     Stayin' Alive
                                 </p>
 
-                                <p className="mt-4 leading-relaxed text-black">
+                                <p className="mt-4 leading-relaxed ">
                                     No, Rose, they are not breathing. And they have no arms or legs …
                                     Where are they? You know what? If we come across somebody with no
                                     arms or legs, do we bother resuscitating them? I mean, what
@@ -25,7 +25,7 @@ const Reviews = () => {
                             </div>
                         </div>
 
-                        <footer className="mt-4 text-sm font-medium text-black sm:mt-6">
+                        <footer className="mt-4 text-sm font-medium  sm:mt-6">
                             &mdash; Michael Scott
                         </footer>
                     </blockquote>
@@ -38,7 +38,7 @@ const Reviews = () => {
                                     Lia Desuja
                                 </p>
 
-                                <p className="mt-4 leading-relaxed text-black">
+                                <p className="mt-4 leading-relaxed ">
                                     No, Rose, they are not breathing. And they have no arms or legs …
                                     Where are they? You know what? If we come across somebody with no
                                     arms or legs, do we bother resuscitating them? I mean, what
@@ -47,7 +47,7 @@ const Reviews = () => {
                             </div>
                         </div>
 
-                        <footer className="mt-4 text-sm font-medium text-black sm:mt-6">
+                        <footer className="mt-4 text-sm font-medium  sm:mt-6">
                             &mdash; Michael Scott
                         </footer>
                     </blockquote>
@@ -60,7 +60,7 @@ const Reviews = () => {
                                     Stayin' Jas
                                 </p>
 
-                                <p className="mt-4 leading-relaxed text-black">
+                                <p className="mt-4 leading-relaxed ">
                                     No, Rose, they are not breathing. And they have no arms or legs …
                                     Where are they? You know what? If we come across somebody with no
                                     arms or legs, do we bother resuscitating them? I mean, what
@@ -69,7 +69,7 @@ const Reviews = () => {
                             </div>
                         </div>
 
-                        <footer className="mt-4 text-sm font-medium text-black sm:mt-6">
+                        <footer className="mt-4 text-sm font-medium  sm:mt-6">
                             &mdash; Michael Scott
                         </footer>
                     </blockquote>

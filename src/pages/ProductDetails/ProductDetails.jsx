@@ -5,11 +5,11 @@ import { AuthContext } from "../../context/AuthProvider";
 
 const ProductDetails = () => {
     const { user } = useContext(AuthContext);
-    // console.log(user.email);
+    console.log(user.email);
     const singleProduct = useLoaderData();
     const handleAddToCart = singleProduct => {
         const cart = {
-            email: user?.email,
+            email: user.email,
             productName: singleProduct.name,
             productPrice: singleProduct.price,
             productBName: singleProduct.brandName
