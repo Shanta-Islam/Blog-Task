@@ -63,7 +63,7 @@ const Header = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end flex">
+            <div className="navbar-end lg:flex items-center">
                 <button className="btn btn-square btn-ghost">
                     <label className="swap swap-rotate w-6 h-6">
                         <input type="checkbox"
@@ -82,7 +82,7 @@ const Header = () => {
                                 </div>
                             </div></li>
                             <li className="mx-3"><p>{user?.displayName ? user?.displayName : "User"}</p></li>
-                            <li className="mx-3" onClick={handleSignOut}><a>SignOut</a></li>
+                            <li className="mx-3 cursor-pointer" onClick={handleSignOut}><a>SignOut</a></li>
                         </ul>
                         :
                         <ul className="menu menu-horizontal px-1">

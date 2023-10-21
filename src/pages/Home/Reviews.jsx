@@ -12,7 +12,7 @@ const Reviews = () => {
                     >
                         <div>
                             <div className="mt-4">
-                                <p className="text-2xl font-bold text-rose-600 sm:text-3xl">
+                                <p className="text-2xl font-bold sm:text-3xl">
                                     Stayin' Alive
                                 </p>
 
@@ -34,7 +34,7 @@ const Reviews = () => {
                     >
                         <div>
                             <div className="mt-4">
-                                <p className="text-2xl font-bold text-rose-600 sm:text-3xl">
+                                <p className="text-2xl font-bold  sm:text-3xl">
                                     Lia Desuja
                                 </p>
 
@@ -56,7 +56,7 @@ const Reviews = () => {
                     >
                         <div>
                             <div className="mt-4">
-                                <p className="text-2xl font-bold text-rose-600 sm:text-3xl">
+                                <p className="text-2xl font-bold  sm:text-3xl">
                                     Stayin' Jas
                                 </p>
 

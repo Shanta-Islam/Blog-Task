@@ -5,11 +5,12 @@ import { AuthContext } from "../../context/AuthProvider";
 
 const ProductDetails = () => {
     const { user } = useContext(AuthContext);
-    console.log(user.email);
+    const userEmail = user?.email;
+    console.log(userEmail)
     const singleProduct = useLoaderData();
     const handleAddToCart = singleProduct => {
         const cart = {
-            email: user.email,
+            email: userEmail,
             productName: singleProduct.name,
             productPrice: singleProduct.price,
             productBName: singleProduct.brandName
@@ -30,7 +31,6 @@ const ProductDetails = () => {
                 }
 
             })
-            toast.success('Add to Cart Successfully')
     }
     return (
         <div className="py-20">

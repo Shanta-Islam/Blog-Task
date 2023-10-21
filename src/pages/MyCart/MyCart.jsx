@@ -16,7 +16,7 @@ const MyCart = () => {
                 if (data.deletedCount > 0) {
                     toast.success('deleted successfully');
                     // remove the user from the UI
-                    const remainingUsers = items.filter(item => item?._id !== id);
+                    const remainingUsers = items && items.filter(item => item?._id !== id);
                     setItems(remainingUsers);
                 }
             })
@@ -38,7 +38,7 @@ const MyCart = () => {
                     </thead>
                     <tbody>
                         {
-                            items.map(item => <tr key={item?._id}>
+                           items && items.map(item => <tr key={item?._id}>
                                 
                                 <td>{item?.email}</td>
                                 <td>{item?.productName}</td>

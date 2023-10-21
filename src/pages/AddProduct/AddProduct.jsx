@@ -13,7 +13,7 @@ const AddProduct = () => {
         const desc = form.desc.value;
         const rating = form.rating.value;
 
-        const newProduct = { photo, name, price, brandName, type, desc, rating}
+        const newProduct = { photo, name, price, brandName, type, desc, rating }
         console.log(newProduct);
         fetch('https://eshophub-server-shanta-islam.vercel.app/products', {
             method: 'POST',
@@ -25,9 +25,10 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.insertedId){
+                if (data.insertedId) {
                     toast.success('Product Added Successfully')
                 }
+                form.reset();
             })
 
     }
@@ -62,7 +63,6 @@ const AddProduct = () => {
                             <span className="label-text">Brand Name</span>
                         </label>
                         <label className="input-group">
-                            {/* <input type="text" name="bName" placeholder="Brand Name" className="input input-bordered w-full" /> */}
                             <select className="select select-bordered w-full" name='bName'>
                                 <option>Amazon</option>
                                 <option>Walmart</option>
@@ -94,20 +94,28 @@ const AddProduct = () => {
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
                         <label className="label">
+                            <span className="label-text">Rating</span>
+                        </label>
+                        <label className="input-group">
+                            {/* <input type="number" name="rating" placeholder="Rating" className="input input-bordered w-full" /> */}
+                            <select className="select select-bordered w-full" name="rating">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div className="form-control md:w-1/2 ml-4">
+                        <label className="label">
                             <span className="label-text">Short Description</span>
                         </label>
                         <label className="input-group">
                             <textarea name="desc" className="textarea textarea-bordered w-full" placeholder="Write Short Description"></textarea>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Rating</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="number" name="rating" placeholder="Rating" className="input input-bordered w-full" />
-                        </label>
-                    </div>
+
 
                 </div>
 
