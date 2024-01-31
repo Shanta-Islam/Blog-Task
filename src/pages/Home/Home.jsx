@@ -1,15 +1,11 @@
 import Banner from "./Banner";
-import Brands from "./Brands";
-import Deals from "./Deals";
-import Reviews from "./Reviews";
+import Blogs from "./Blogs";
 
 const Home = () => {
     return (
         <div>
-            <Banner></Banner> 
-            <Brands></Brands>
-            <Deals></Deals>
-            <Reviews></Reviews>
+            <Banner></Banner>
+            <Blogs></Blogs> 
         </div>
     );
 };

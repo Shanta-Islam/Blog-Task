@@ -1,14 +1,15 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import { FaRegTrashCan } from "react-icons/fa6";
 
-const MyCart = () => {
-    const loadedStoreProducts = useLoaderData();
-    const [items, setItems] = useState(loadedStoreProducts);
+const MyFavorite = () => {
+    const loadedStoreBlogs = useLoaderData();
+    const [items, setItems] = useState(loadedStoreBlogs);
     // console.log(items)
     const handleDelete = id =>{
         console.log(id);
-        fetch(`https://eshophub-server-shanta-islam.vercel.app/product/${id}`, {
+        fetch(`http://localhost:5000/deleteBlog/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -23,29 +24,25 @@ const MyCart = () => {
     }
     return (
         <div className="p-20">
-            <h2 className="text-center">Cart Items: {loadedStoreProducts.length}</h2>
+            <h2 className="text-center">Favorite Items: {loadedStoreBlogs.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
                         <tr>
-                            
-                            <th>Email</th>
-                            <th>Product Name</th>
-                            <th>Product Price</th>
+                            <th>Photo</th>
+                            <th>Blog Name</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                            items && items.map(item => <tr key={item?._id}>
-                                
-                                <td>{item?.email}</td>
-                                <td>{item?.productName}</td>
-                                <td>{item?.productPrice}</td>
+                                <td><img src={item?.photo} alt="" className="w-10 h-10 rounded-full" /></td>
+                                <td>{item?.name}</td>
                                 <td>
                                     <button
-                                        onClick={() => handleDelete(item?._id)} className="btn">X</button>
+                                        onClick={() => handleDelete(item?._id)} className="btn"><FaRegTrashCan/></button>
                                 </td>
                             </tr>)
                         }
@@ -58,4 +55,4 @@ const MyCart = () => {
     );
 };
 
-export default MyCart;
+export default MyFavorite; 

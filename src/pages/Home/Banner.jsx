@@ -1,43 +1,17 @@
-import { Navigation, Pagination, Scrollbar, A11y, EffectFade } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { Link } from "react-router-dom";
+
 
 const Banner = () => {
     return (
-        <div>
-            <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
-                spaceBetween={50}
-                slidesPerView={1}
-                effect="fade"
-                navigation
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
-            >
-                <SwiperSlide>
-                    <div className="relative bg-slate-800">
-                        <img src="https://i.ibb.co/C1Qddns/img.jpg" alt="" className='h-[700px] w-full' />
-                        <div className='absolute top-[40%] left-[40%]'>
-                            <h2 className='text-white bg-black px-5 py-2 text-center '>Products are made in a factory but brands are created in the mind.</h2>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="relative bg-slate-800">
-
-                        <img src="https://i.ibb.co/wwHZmtf/slider-img-1.png" alt="" className='h-[700px] w-full' />
-                        <div className='absolute top-[40%] left-[40%] translate-x-[-50%] translate-y-[-50%]'>
-                            <h2 className='text-white bg-black px-5 py-2 text-center'>Products are made in a factory but brands are created in the mind. Brand Made With Love</h2>
-                        </div>
-                    </div>
-                </SwiperSlide>
-
-            </Swiper>
+        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/9rDPyQS/hero-img.jpg)' }}>
+            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-content text-center text-neutral-content">
+                <div className="max-w-md">
+                    <h1 className="mb-5 text-5xl font-bold">Create a blog and share your voice in minutes.</h1>
+                    <p className="mb-5">This website makes it more easy to share your ideas. Signup free to start.</p>
+                    <Link to='/login'><button className="btn btn-grey-600">Get Started</button></Link>
+                </div>
+            </div>
         </div>
     );
 };

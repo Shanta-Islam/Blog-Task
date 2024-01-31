@@ -3,7 +3,6 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
-import { FaHtml5 } from "react-icons/fa6";
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -16,11 +15,16 @@ const Header = () => {
     }
     const links = <>
         <li><NavLink to="/" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#cbbdfe] font-bold hover:text-[#cbbdfe] focus:text-[#cbbdfe] bg-transparent underline " : ""}>Home</NavLink></li>
-        <li><NavLink to="/addProduct" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#cbbdfe] font-bold hover:text-[#cbbdfe] focus:text-[#cbbdfe]  bg-transparent underline" : ""}>Add product</NavLink></li>
-        <li><NavLink to={`/storeProduct/${user?.email}`} className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#cbbdfe] font-bold hover:text-[#cbbdfe] focus:text-[#cbbdfe] bg-transparent underline" : ""}>My Cart</NavLink></li>
+            isPending ? "pending" : isActive ? "font-bold hover:text-black focus:text-black bg-transparent underline " : ""}>Home</NavLink></li>
+        <li><NavLink to="/addBlog" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-bold hover:text-black focus:text-black bg-transparent underline " : ""}>Add Blog</NavLink></li>
+        <li><NavLink to={`/blogs/${user?.uid}`} className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-bold hover:text-black focus:text-black bg-transparent underline " : ""}>My Blogs</NavLink></li>
+        <li><NavLink to={`/storeBlog/${user?.email}`} className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-bold hover:text-black focus:text-black bg-transparent underline " : ""}>My Favorite</NavLink></li>
+        <li><NavLink to="/contact" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-bold hover:text-black focus:text-black bg-transparent underline " : ""}>Contact</NavLink></li>
+
     </>
 
 
@@ -53,9 +57,9 @@ const Header = () => {
                     </ul>
                 </div>
                 {
-                    theme=== 'light' ?
-                    <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-black"><img src="https://i.ibb.co/PYdLcCM/logo-2.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
-                    : <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-white"><img src="https://i.ibb.co/Bj9q11D/logo-1.png" alt="" className="w-6 lg:w-10" />eShopHub</a></Link>
+                    theme === 'light' ?
+                        <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-black">Blog</a></Link>
+                        : <Link to='/'><a className="normal-case flex gap-2 text-xl lg:text-3xl font-medium text-white">Blog</a></Link>
                 }
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -75,15 +79,17 @@ const Header = () => {
                 </button>
                 {
                     user ?
-                        <ul className="menu-horizontal px-3">
-                            <li className="mx-3"><div className="avatar">
-                                <div className="w-8 rounded-full">
-                                    <img src={user?.photoURL ? user?.photoURL : 'https://i.ibb.co/X2xMzwL/defultuser.png'} />
+                        <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img alt="Tailwind CSS Navbar component" src={user?.photoURL ? user?.photoURL : 'https://i.ibb.co/X2xMzwL/defultuser.png'} />
                                 </div>
-                            </div></li>
-                            <li className="mx-3"><p>{user?.displayName ? user?.displayName : "User"}</p></li>
-                            <li className="mx-3 cursor-pointer" onClick={handleSignOut}><a>SignOut</a></li>
-                        </ul>
+                            </div>
+                            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                <li className="mx-3"><p>{user?.displayName ? user?.displayName : "User"}</p></li>
+                                <li className="mx-3 cursor-pointer" onClick={handleSignOut}><a>SignOut</a></li>
+                            </ul>
+                        </div>
                         :
                         <ul className="menu menu-horizontal px-1">
                             <li><NavLink to="/login" className={({ isActive, isPending }) =>

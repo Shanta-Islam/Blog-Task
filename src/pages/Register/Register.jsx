@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 // import { GoogleAuthProvider, updateProfile } from "firebase/auth";
 
 const Register = () => {
     const { providerLogin, createUser, updateUserProfile, setLoading } = useContext(AuthContext);
-
+    const navigate = useNavigate();
     // const googleProvider = new GoogleAuthProvider();
     const handleRegister = e => {
         e.preventDefault();
@@ -42,6 +42,7 @@ const Register = () => {
                 })
                 toast.success('Successfully Sign Up')
                 handleUpdateUserProfile(name, photo);
+                navigate('/');
             })
             .catch(error => {
                 console.error(error)
