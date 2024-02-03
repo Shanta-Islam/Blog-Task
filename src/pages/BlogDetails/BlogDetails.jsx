@@ -10,6 +10,7 @@ const BlogDetails = () => {
     const userEmail = user?.email;
     const [loading, setLoading] = useState(true);
     const [comments, setComments] = useState([]);
+    const [showModal, setShowModal] = useState(false);
     console.log(userEmail)
     const singleBlog = useLoaderData();
     const handleAddToCart = singleBlog => {
@@ -94,6 +95,10 @@ const BlogDetails = () => {
             .catch(err => console.error(err));
 
     }
+    const handleClose = ()=>{
+        const modalid = document.getElementById('review_modal');
+        modalid.removeAttribute('open');
+    }
     return (
         <div className="py-20">
             <div className="card card-compact w-2/3 bg-base-100 shadow-xl mx-auto">
@@ -140,7 +145,7 @@ const BlogDetails = () => {
                             <input type="text" placeholder="photo" name="userphoto" className="input input-bordered hidden" value={user?.photoURL ? user?.photoURL : 'https://i.ibb.co/X2xMzwL/defultuser.png'} />
                         </div>
                         <div className="modal-action" htmlFor="review_modal">
-                            <button  className="btn">Submit Review</button>
+                            <button onClick={handleClose}  className="btn">Submit Review</button>
                         </div>
                     </form>
                 </dialog>
